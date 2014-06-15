@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO", "SILO\SILO.csproj", "{91CC3F5D-8010-45FA-8591-E09CF16BD1FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Pandora.Engine", "Engine\SILO.Pandora.Engine.csproj", "{04DE8D27-E013-4406-8C3B-6438C3D41D68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Pandora.Engine", "SILO.Pandora.Engine\SILO.Pandora.Engine.csproj", "{04DE8D27-E013-4406-8C3B-6438C3D41D68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Pandora.Player", "Player\SILO.Pandora.Player.csproj", "{967CB0DF-7EBA-49EF-8E5C-2CD45686208F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Pandora.Player", "SILO.Pandora.Player\SILO.Pandora.Player.csproj", "{967CB0DF-7EBA-49EF-8E5C-2CD45686208F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Sonos.SonosUPnP", "SILO.Sonos.SonosUPnP\SILO.Sonos.SonosUPnP.csproj", "{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,16 @@ Global
 		{967CB0DF-7EBA-49EF-8E5C-2CD45686208F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{967CB0DF-7EBA-49EF-8E5C-2CD45686208F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{967CB0DF-7EBA-49EF-8E5C-2CD45686208F}.Release|x86.ActiveCfg = Release|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9DE76BE9-A61B-4754-92DE-05B9FD2EEC5A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

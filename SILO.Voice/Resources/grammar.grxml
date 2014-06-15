@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <grammar version="1.0" xml:lang="en-US" mode="voice"
-root="Subj_Verb_Obj" tag-format="semantics-ms/1.0"
+root="SILO_Root" tag-format="semantics-ms/1.0"
 xmlns="http://www.w3.org/2001/06/grammar" >
 
-  <rule id="Subj_Verb_Obj" scope="public">
-    <one-of>
-      <item>silo</item>
-    </one-of>
+  <!-- Introduction to XML Grammar Elements: http://msdn.microsoft.com/en-us/library/hh378521(v=office.14).aspx -->
+  <!-- More detailed explanation: http://msdn.microsoft.com/en-us/library/hh378341(v=office.14).aspx -->
 
-   <!--branch here, one of Subj_Verb_Obj, and another of something else-->
+  <rule id="SILO_Root" scope="public">
+    <example>silo</example>
+    <example>silo </example>
     
+    <item>silo</item>
+
+    <item repeat="0-1">
+      <ruleref uri="#Subj_Verb_Obj"/>
+      <tag>$.Fruit=$$;</tag>
+    </item>
+  </rule>
+
+  <rule id="Subj_Verb_Obj" scope="private">
     <ruleref uri="#id_Subject" />
     <tag> $.Subject = $$; </tag>
 

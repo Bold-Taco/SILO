@@ -61,22 +61,12 @@ namespace SILO.Voice.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///
-        ///&lt;!DOCTYPE grammar PUBLIC &quot;-//W3C//DTD GRAMMAR 1.0//EN&quot;
-        ///                  &quot;http://www.w3.org/TR/speech-grammar/grammar.dtd&quot;&gt;
-        ///
-        ///&lt;grammar xmlns=&quot;http://www.w3.org/2001/06/grammar&quot; xml:lang=&quot;en&quot;
-        ///         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-        ///         xsi:schemaLocation=&quot;http://www.w3.org/2001/06/grammar 
-        ///                             http://www.w3.org/TR/speech-grammar/grammar.xsd&quot;
-        ///         version=&quot;1.0&quot; mode=&quot;voice&quot; root=&quot;basicCmd&quot;&gt;
-        ///
-        ///  &lt;meta name [rest of string was truncated]&quot;;.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static string grammar {
+        internal static byte[] grammar {
             get {
-                return ResourceManager.GetString("grammar", resourceCulture);
+                object obj = ResourceManager.GetObject("grammar", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

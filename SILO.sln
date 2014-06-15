@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO", "SILO\SILO.csproj", "{91CC3F5D-8010-45FA-8591-E09CF16BD1FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Pandora.Engine", "SILO.Pandora.Engine\SILO.Pandora.Engine.csproj", "{04DE8D27-E013-4406-8C3B-6438C3D41D68}"
@@ -11,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Sonos.SonosUPnP", "SIL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Voice", "SILO.Voice\SILO.Voice.csproj", "{1DF87C0C-F144-47E8-98FC-0A0D8017C383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO.Hue", "SILO.Hue\SILO.Hue.csproj", "{2F109F46-8745-46D1-AB64-BE52A17A958E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SILO_Kristen", "SILO_Kristen\SILO_Kristen.csproj", "{97B22D72-967D-4E70-AC8E-ECE72E6286D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,16 +75,16 @@ Global
 		{1DF87C0C-F144-47E8-98FC-0A0D8017C383}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1DF87C0C-F144-47E8-98FC-0A0D8017C383}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1DF87C0C-F144-47E8-98FC-0A0D8017C383}.Release|x86.ActiveCfg = Release|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{2F109F46-8745-46D1-AB64-BE52A17A958E}.Release|x86.ActiveCfg = Release|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{97B22D72-967D-4E70-AC8E-ECE72E6286D3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

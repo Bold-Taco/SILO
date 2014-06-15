@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace SILO.Voice
 {
-    class Program
+    public class VoiceHandler
     {
-        static void Main(string[] args)
+        public VoiceHandler()
         {
             // Create a new SpeechRecognitionEngine instance (will be specific to this process, not shared with the system)
             using (SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US")))
             {
                 // load in the grammar XML file
-                Stream grammarStream = new MemoryStream(Encoding.UTF8.GetBytes(Properties.Resources.grammar));
+                Stream grammarStream = new MemoryStream(Properties.Resources.grammar);
                 Grammar g = new Grammar(grammarStream);
 
                 // load the grammar into the speech recognizer
@@ -40,9 +40,15 @@ namespace SILO.Voice
         {
             Console.WriteLine(e.Result.Text + "(" + e.Result.Confidence + ")");
 
-            SpeechSynthesizer reader = new SpeechSynthesizer();
-            reader.SpeakAsync("I heard you say: " + e.Result.Text);
-            Console.WriteLine("finished speaking");
+            if (e.Result.Confidence > 0.95) // only trust things where the confidence is extremely high
+            {
+                SpeechSynthesizer reader = new SpeechSynthesizer();
+                reader.SpeakAsync("I heard you say: " + e.Result.Text);
+                Console.WriteLine("finished speaking");
+            }
+
+
+            var s = e.Result.Semantics;
         }
 
         static void sr_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+root="Subj_Verb_Obj" tag-format="semantics-ms/1.0"
+xmlns="http://www.w3.org/2001/06/grammar" >
+
+  <rule id="Subj_Verb_Obj" scope="public">
+    <one-of>
+      <item>silo</item>
+    </one-of>
+
+   <!--branch here, one of Subj_Verb_Obj, and another of something else-->
+    
+    <ruleref uri="#id_Subject" />
+    <tag> $.Subject = $$; </tag>
+
+    <ruleref uri="#id_Verb" />
+    <tag> $.Verb = $$; </tag>
+
+    <one-of>
+      <item repeat="0-1">the</item>
+      <item repeat="0-1">a</item>
+      <item repeat="0-1">an</item>
+    </one-of>
+
+    <ruleref uri="#id_Object" />
+    <tag> $.Object = $$; </tag>
+
+  </rule>
+
+  <rule id="id_Subject" scope="private">
+    <one-of>
+      <item> I </item>
+      <item> you </item>
+      <item> he </item>
+      <item> she </item>
+      <item> Tom </item>
+      <item> Mary </item>
+    </one-of>
+  </rule>
+
+  <rule id="id_Verb" scope="private">
+    <one-of>
+      <item> ate </item>
+      <item> bought </item>
+      <item> saw </item>
+      <item> sold </item>
+      <item> wanted </item>
+    </one-of>
+  </rule>
+
+  <rule id="id_Object" scope="private">
+    <one-of>
+      <item> apple </item>
+      <item> banana </item>
+      <item> pear </item>
+      <item> peach </item>
+      <item> melon </item>
+    </one-of>
+  </rule>
+</grammar>

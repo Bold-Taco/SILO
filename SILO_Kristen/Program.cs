@@ -1,4 +1,5 @@
 ﻿using SILO.Sonos.SonosUPnP;
+using SILO.Voice;
 using System;
 using System.Linq;
 using System.Threading;
@@ -9,21 +10,13 @@ namespace SILO_Kristen
     {
         static void Main(string[] args)
         {
-            //VoiceHandler vh = new VoiceHandler();
+            #region "initialize all functionality"
+            SonosHandler sonos = new SonosHandler();
+            #endregion
 
-            SonosDiscovery d = new SonosDiscovery();
-            d.StartScan();
-            Thread.Sleep(5000);
+            VoiceHandler vh = new VoiceHandler(sonos);
 
-            int zones = d.Zones.Count;
-            int players = d.Players.Count;
-
-            SonosPlayer player = d.Players.First(p => p.Name == "Kitchen");
-            player.Pause();
-
-            Console.ReadLine();
-
-            player.Play();
+            while (true) { }
         }
     }
 }

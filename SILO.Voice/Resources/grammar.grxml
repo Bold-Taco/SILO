@@ -8,62 +8,119 @@ xmlns="http://www.w3.org/2001/06/grammar" >
 
   <rule id="SILO_Root" scope="public">
     <example>silo</example>
-    <example>silo </example>
-    
+    <example>silo pause all zones</example>
+    <example>silo pause music in all zones</example>
+    <example>silo hit play in all zones</example>
+    <example>silo play in all zones</example>
+    <example>silo play music in all zones</example>
+
     <item>silo</item>
 
-    <item repeat="0-1">
-      <ruleref uri="#Subj_Verb_Obj"/>
-      <tag>$.Fruit=$$;</tag>
-    </item>
+    <one-of>
+      <item repeat="0-1">
+        <ruleref uri="#Sonos"/>
+        <tag>$=$$;$.Function="Sonos";</tag>
+      </item>
+      <item repeat="0-1">
+        <ruleref uri="#Hue"/>
+        <tag>$=$$;$.Function="Hue";</tag>
+      </item>
+    </one-of>
   </rule>
 
-  <rule id="Subj_Verb_Obj" scope="private">
-    <ruleref uri="#id_Subject" />
-    <tag> $.Subject = $$; </tag>
+  <rule id="Sonos" scope="private">
+    <one-of>
+      <item repeat="0-1">hit</item>
+      <item repeat="0-1">press</item>
+    </one-of>
+    
+    <ruleref uri="#id_SonosCommand" />
+    <tag> $.Command = $$; </tag>
 
-    <ruleref uri="#id_Verb" />
-    <tag> $.Verb = $$; </tag>
-
+    <one-of>
+      <item repeat="0-1">in</item>
+    </one-of>
+    
     <one-of>
       <item repeat="0-1">the</item>
-      <item repeat="0-1">a</item>
-      <item repeat="0-1">an</item>
     </one-of>
 
-    <ruleref uri="#id_Object" />
-    <tag> $.Object = $$; </tag>
-
-  </rule>
-
-  <rule id="id_Subject" scope="private">
     <one-of>
-      <item> I </item>
-      <item> you </item>
-      <item> he </item>
-      <item> she </item>
-      <item> Tom </item>
-      <item> Mary </item>
+      <item>
+        <ruleref uri="#id_Location" />
+        <tag> $.Location = $$; </tag>
+      </item>
     </one-of>
   </rule>
 
-  <rule id="id_Verb" scope="private">
+  <rule id="id_SonosCommand" scope="private">
     <one-of>
-      <item> ate </item>
-      <item> bought </item>
-      <item> saw </item>
-      <item> sold </item>
-      <item> wanted </item>
+      <item> pause </item>
+      <item> play </item>
+      <item>
+        pause music  <tag>$="pause"</tag>
+      </item>
+      <item>
+        play music <tag>$="play"</tag>
+      </item>
+      <item>
+        turn on music <tag>$="play"</tag>
+      </item>
+      <item>
+        turn on the music <tag>$="play"</tag>
+      </item>
+      <item>
+        turn off music <tag>$="pause"</tag>
+      </item>
+      <item>
+        turn off the music <tag>$="pause"</tag>
+      </item>
     </one-of>
   </rule>
 
-  <rule id="id_Object" scope="private">
+  <rule id="Hue" scope="private">
     <one-of>
-      <item> apple </item>
-      <item> banana </item>
-      <item> pear </item>
-      <item> peach </item>
-      <item> melon </item>
+
+      <ruleref uri="#id_HueCommand" />
+      <tag> $.Command = $$; </tag>
+
+      <one-of>
+        <item repeat="0-1">the lights</item>
+      </one-of>
+
+      <one-of>
+        <item repeat="0-1">in the</item>
+      </one-of>
+
+      <one-of>
+        <item>
+          <ruleref uri="#id_Location" />
+          <tag> $.Location = $$; </tag>
+        </item>
+      </one-of>
+    </one-of>
+  </rule>
+
+  <rule id="id_HueCommand" scope="private">
+    <one-of>
+      <item>
+        turn off <tag>$="lightsOff"</tag>
+      </item>
+      <item>
+        turn on <tag>$="lightsOn"</tag>
+      </item>
+      <item>
+        change the color of <tag>$="setColor"</tag>
+      </item>
+      <item>
+        dim <tag>$="modifyBrightness"</tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="id_Location" scope="private">
+    <one-of>
+      <item> all zones </item>
     </one-of>
   </rule>
 </grammar>

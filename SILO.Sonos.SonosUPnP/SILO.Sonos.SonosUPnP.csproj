@@ -50,16 +50,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MediaInfo.cs" />
-    <Compile Include="PlayerInfo.cs" />
-    <Compile Include="PlayerStatus.cs" />
-    <Compile Include="SonosDIDL.cs" />
-    <Compile Include="SonosDiscovery.cs" />
+    <Compile Include="CommandList.cs" />
+    <Compile Include="JishiUtilities\MediaInfo.cs" />
+    <Compile Include="JishiUtilities\PlayerInfo.cs" />
+    <Compile Include="JishiUtilities\PlayerStatus.cs" />
+    <Compile Include="JishiUtilities\SonosDIDL.cs" />
+    <Compile Include="JishiUtilities\SonosDiscovery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SonosItem.cs" />
-    <Compile Include="SonosPlayer.cs" />
-    <Compile Include="SonosTrack.cs" />
-    <Compile Include="SonosZone.cs" />
+    <Compile Include="JishiUtilities\SonosItem.cs" />
+    <Compile Include="JishiUtilities\SonosPlayer.cs" />
+    <Compile Include="JishiUtilities\SonosTrack.cs" />
+    <Compile Include="JishiUtilities\SonosZone.cs" />
+    <Compile Include="SonosHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

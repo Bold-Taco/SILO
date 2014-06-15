@@ -16,8 +16,6 @@ namespace SILO
             controller.TurnOnLights();
             controller.SetColor(Color.White);
             Console.ReadKey();
-            controller.Strobe();
-            Console.ReadKey();
             controller.TurnOffLights();
             Console.ReadKey();
         }

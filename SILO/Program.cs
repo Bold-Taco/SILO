@@ -10,6 +10,7 @@ namespace SILO
     {
         static void Main(string[] args)
         {
+            Console.Beep();
         }
     }
 }

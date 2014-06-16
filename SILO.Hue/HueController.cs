@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SILO.Hue
@@ -220,7 +221,6 @@ namespace SILO.Hue
 
         public void Randomize(string GroupName = null)
         {
-            Random rand = new Random(DateTime.Now.Millisecond);
             var command = new LightCommand();
             command.On = true;
             command.TurnOn();
@@ -238,6 +238,34 @@ namespace SILO.Hue
                 {
                     command.SetColor(HueColor.RandomHueColor().HexColor);
                     client.SendCommandAsync(command, new List<string>() { light.Id });
+                }
+            }
+        }
+
+        public async Task PartyMode(int secondsDuration, string GroupName = null)
+        {
+            var command = new LightCommand();
+            Random rand = new Random(DateTime.Now.Millisecond);
+            command.On = true;
+            //command.TurnOn();
+            var end = TimeSpan.FromSeconds(secondsDuration).Add(DateTime.Now.TimeOfDay);
+            if (GroupName != null)
+            {
+                while (DateTime.Now.TimeOfDay < end)
+                {
+                    command.SetColor(HueColor.RandomHueColor().HexColor);
+                    var group = GetGroupByName(GroupName);
+                    await client.SendCommandAsync(command, new List<string>() { group.Lights[rand.Next(group.Lights.Count)] });
+                    Thread.Sleep(100);
+                }
+            }
+            else
+            {
+                while (DateTime.Now.TimeOfDay < end)
+                {
+                    command.SetColor(HueColor.RandomHueColor().HexColor);
+                    await client.SendCommandAsync(command, new List<string>() { Lights[rand.Next(Lights.Count)].Id });
+                    Thread.Sleep(100);
                 }
             }
         }

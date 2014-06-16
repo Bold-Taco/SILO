@@ -16,6 +16,24 @@ namespace SILO
             controller.TurnOnLights();
             controller.SetColor(Color.White);
             Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
+            controller.Randomize();
+            Console.ReadKey();
             controller.TurnOffLights();
             Console.ReadKey();
         }

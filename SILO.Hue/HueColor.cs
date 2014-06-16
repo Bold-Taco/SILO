@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace SILO.Hue
 {
-    class HueColor
+    public class HueColor
     {
         public Color Color { get; set; }
         
@@ -19,10 +19,15 @@ namespace SILO.Hue
             }
         }
 
-
         public HueColor(Color color)
         {
             this.Color = color;
+        }
+
+        public static HueColor RandomHueColor()
+        {
+            Random r = new Random(DateTime.Now.Millisecond);
+            return new HueColor(Color.FromArgb(r.Next(255), r.Next(255), r.Next(255)));
         }
 
 

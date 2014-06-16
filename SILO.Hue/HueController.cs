@@ -192,10 +192,54 @@ namespace SILO.Hue
                 client.SendCommandAsync(command, GetGroupByName(GroupName).Lights);
         }
 
-        public void Strobe(string GroupName = null)
+        public void SetScene(string SceneName, string GroupName = null)
         {
-            throw new MissingMethodException();
-            //client.SendCommandRawAsync("0A00F1F01F1F1001F1FF100000000001F2F", new List<string>(){"2"});
+            HueScene scene = new HueScene(SceneName);
+            Random rand = new Random(DateTime.Now.Millisecond);
+            var command = new LightCommand();
+            command.On = true;
+            command.TurnOn();
+            
+            if (GroupName != null)
+            {
+                foreach (var light in GetGroupByName(GroupName).Lights)
+                {
+                    command.SetColor(scene.Colors[rand.Next(0, scene.Colors.Count)].HexColor);
+                    client.SendCommandAsync(command, new List<string>() { light });
+                }
+            }
+            else
+            {
+                foreach (var light in Lights)
+                {
+                    command.SetColor(scene.Colors[rand.Next(0, scene.Colors.Count)].HexColor);
+                    client.SendCommandAsync(command, new List<string>(){light.Id});
+                }
+            }
+        }
+
+        public void Randomize(string GroupName = null)
+        {
+            Random rand = new Random(DateTime.Now.Millisecond);
+            var command = new LightCommand();
+            command.On = true;
+            command.TurnOn();
+            if (GroupName != null)
+            {
+                foreach (var light in GetGroupByName(GroupName).Lights)
+                {
+                    command.SetColor(HueColor.RandomHueColor().HexColor);
+                    client.SendCommandAsync(command, new List<string>() { light });
+                }
+            }
+            else
+            {
+                foreach (var light in Lights)
+                {
+                    command.SetColor(HueColor.RandomHueColor().HexColor);
+                    client.SendCommandAsync(command, new List<string>() { light.Id });
+                }
+            }
         }
 
         #region Init Tasks
